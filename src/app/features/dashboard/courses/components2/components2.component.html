@@ -1,0 +1,44 @@
+<h2 mat-dialog-title>Agregar curso</h2>
+
+<mat-dialog-content>
+  <form (ngSubmit)="onSubmitCourse()" [formGroup]="courseForm" style="margin-top: 1px;">
+
+    <!-- ID -->
+    <mat-form-field style="width: 100%;">
+      <mat-label>ID</mat-label>
+      <input formControlName="id" matInput>
+      <mat-error>El campo es requerido</mat-error>
+    </mat-form-field>
+
+    <!-- Curso -->
+    <mat-form-field style="width: 100%;">
+      <mat-label>Curso</mat-label>
+      <input formControlName="curso" matInput>
+      <mat-error>El campo es requerido</mat-error>
+    </mat-form-field>
+
+    <!-- Start Date -->
+    <mat-form-field style="width: 100%;">
+      <mat-label>Fecha de inicio</mat-label>
+      <input formControlName="startDate" matInput [matDatepicker]="startPicker">
+      <mat-datepicker-toggle matSuffix [for]="startPicker"></mat-datepicker-toggle>
+      <mat-datepicker #startPicker></mat-datepicker>
+      <mat-error>El campo es requerido</mat-error>
+    </mat-form-field>
+
+    <!-- End Date -->
+    <mat-form-field style="width: 100%;">
+      <mat-label>Fecha de cierre</mat-label>
+      <input formControlName="endDate" matInput [matDatepicker]="endPicker">
+      <mat-datepicker-toggle matSuffix [for]="endPicker"></mat-datepicker-toggle>
+      <mat-datepicker #endPicker></mat-datepicker>
+      <mat-error>El campo es requerido</mat-error>
+    </mat-form-field>
+
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button mat-dialog-close mat-button (click)="onCancel()">Cancelar</button>
+  <button (click)="onSubmitCourse()" mat-button>Guardar</button>
+</mat-dialog-actions>

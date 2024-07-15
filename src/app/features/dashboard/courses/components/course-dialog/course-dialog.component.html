@@ -1,0 +1,70 @@
+
+<h2 mat-dialog-title>Agregar alumno</h2>
+
+<mat-dialog-content >
+    <form (ngSubmit)="onSubmitStudent()" [formGroup]="courseForm" style="margin-top: 1px;">
+        
+        <!-- ID -->
+        <mat-form-field style="margin-top: 0px; width: 100%;">
+            <mat-label>ID</mat-label>
+            <input formControlName="id" matInput>
+            <mat-error>El campo es requerido</mat-error>
+        </mat-form-field>
+        
+        <!-- Nombre -->
+        <mat-form-field style="margin-top: 0px; width: 100%;">
+            <mat-label>Nombre</mat-label>
+            <input formControlName="nombre" matInput>
+            <mat-error>El campo es requerido</mat-error>
+        </mat-form-field>
+        
+        <!-- Apellido -->
+        <mat-form-field style="margin-top: 0px; width: 100%;">
+            <mat-label>Apellido</mat-label>
+            <input formControlName="apellido" matInput>
+            <mat-error>El campo es requerido</mat-error>
+        </mat-form-field>
+
+        <!-- Edad -->
+        <mat-form-field style="margin-top: 0px; width: 100%;">
+            <mat-label>Edad</mat-label>
+            <input formControlName="edad" matInput>
+            <mat-error>El campo es requerido</mat-error>
+        </mat-form-field>
+
+        <!-- Teléfono -->
+        <mat-form-field style="margin-top: 0px; width: 100%;">
+            <mat-label>DNI</mat-label>
+            <input formControlName="telefono" matInput>
+            <mat-error>El campo es requerido</mat-error>
+        </mat-form-field>
+
+        <!-- Email -->
+        <mat-form-field style="margin-top: 0px; width: 100%;">
+            <mat-label>Email</mat-label>
+            <input formControlName="mail" matInput>
+            <mat-error>El campo es requerido</mat-error>
+        </mat-form-field>
+
+        <!-- Date Range
+        <mat-form-field style="display: flex; width: 100%;">
+            <mat-label>Enter a date range</mat-label>
+            <mat-date-range-input [rangePicker]="picker">
+                <input matStartDate placeholder="Start date">
+                <input matEndDate placeholder="End date">
+            </mat-date-range-input>
+            <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-date-range-picker #picker></mat-date-range-picker>
+        </mat-form-field> -->
+
+    </form>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+    <button mat-dialog-close mat-button>Cancelar</button>
+    <button (click)="onSubmitStudent()"mat-button>Guardar</button>
+</mat-dialog-actions>
+
+
+

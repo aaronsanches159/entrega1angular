@@ -1,0 +1,93 @@
+<button (click)="openDialogStudent()" mat-flat-button style="background-color: rgb(75, 15, 75);"><mat-icon>add</mat-icon>AGREGAR ALUMNO</button>
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8 " style="margin-top: 10px;">
+
+  <!-- ID Column -->
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef> ID </th>
+    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+  </ng-container>
+
+  <!-- Nombre Column -->
+  <ng-container matColumnDef="nombre">
+    <th mat-header-cell *matHeaderCellDef> Nombre </th>
+    <td mat-cell *matCellDef="let element"> {{element | fullname }} </td>
+  </ng-container>
+  
+  <!-- Apellido Column -->
+  <ng-container matColumnDef="apellido">
+    <th mat-header-cell *matHeaderCellDef> Apellido </th>
+    <td mat-cell *matCellDef="let element"> {{element.apellido}} </td>
+  </ng-container>
+
+  <!-- Edad Column -->
+  <ng-container matColumnDef="edad">
+    <th mat-header-cell *matHeaderCellDef> Edad </th>
+    <td mat-cell *matCellDef="let element"> {{element.edad}} </td>
+  </ng-container>
+
+  <!-- Telefono Column -->
+  <ng-container matColumnDef="telefono">
+    <th mat-header-cell *matHeaderCellDef> DNI </th>
+    <td mat-cell *matCellDef="let element"> {{element.telefono}} </td>
+  </ng-container>
+
+  <!-- Mail Column -->
+  <ng-container matColumnDef="mail">
+    <th mat-header-cell *matHeaderCellDef> Email </th>
+    <td mat-cell *matCellDef="let element"> {{element.mail}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="acciones">
+    <th mat-header-cell *matHeaderCellDef> Acciones </th>
+    <td mat-cell *matCellDef="let element">
+      <button (click)="deleteCourseId(element.id)" mat-icon-button><mat-icon>delete</mat-icon></button>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+<!-- Boton de cursada -->
+<button (click)="openDialogCourse()" mat-flat-button style="background-color: rgb(75, 15, 75); margin-top: 10px;"><mat-icon>add</mat-icon>AGREGAR CLASE</button>
+<!-- Boton de cursada -->
+
+<table mat-table [dataSource]="courseDataSource" class="mat-elevation-z8" style="margin-top: 10px;">
+
+  <!-- ID Column -->
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef> ID </th>
+    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+  </ng-container>
+
+  <!-- Curso Column -->
+  <ng-container matColumnDef="curso">
+    <th mat-header-cell *matHeaderCellDef> Curso </th>
+    <td mat-cell *matCellDef="let element"> {{element.curso}} </td>
+  </ng-container>
+
+  <!-- Start Date Column -->
+  <ng-container matColumnDef="startDate">
+    <th mat-header-cell *matHeaderCellDef> Fecha de inicio </th>
+    <td mat-cell *matCellDef="let element"> {{element.startDate | date}} </td>
+  </ng-container>
+
+  <!-- End Date Column -->
+  <ng-container matColumnDef="endDate">
+    <th mat-header-cell *matHeaderCellDef> Fecha de cierre </th>
+    <td mat-cell *matCellDef="let element"> {{element.endDate | date}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="acciones">
+    <th mat-header-cell *matHeaderCellDef> Acciones </th>
+    <td mat-cell *matCellDef="let element">
+      <button (click)="deleteCourseId(element.id)" mat-icon-button><mat-icon>delete</mat-icon></button>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedCourseColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedCourseColumns;"></tr>
+</table>
+
+

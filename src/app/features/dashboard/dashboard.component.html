@@ -1,0 +1,35 @@
+<mat-drawer-container class="example-container" autosize>
+
+    <mat-drawer #drawer class="example-sidenav" mode="side">
+      <mat-list role="list">
+        <a mat-list-item href="...">Inicio</a>
+        <a mat-list-item href="...">Alumnos</a>
+        <a mat-list-item href="...">Clases</a>
+      </mat-list>
+    </mat-drawer>
+  
+
+
+    <div class="example-sidenav-content">
+
+        <mat-toolbar style="color: white; background-color: rgb(77, 17, 77); padding-left: 10px;" >
+            <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" >
+              <mat-icon  mat-button (click)="drawer.toggle()">menu</mat-icon>
+            </button>
+            <span>Panel Administrativo</span>
+            <span class="example-spacer"></span>
+          </mat-toolbar>
+
+
+  <main class="p-5"> 
+        <app-courses>
+
+        </app-courses>
+  </main>   
+
+
+    </div>
+
+
+  </mat-drawer-container>
+
